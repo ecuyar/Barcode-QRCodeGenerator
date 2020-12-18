@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MidPortal_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="Mlz_Depo">
+    <Key>
+      <PropertyRef Name="DEPO_ID" />
+    </Key>
+    <Property Name="DEPO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UST_DEPO_ID" Type="int" Nullable="false" />
+    <Property Name="ALT_DEPO_SAYISI" Type="int" Nullable="false" />
+    <Property Name="DEPO_KODU" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ADI" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="ADRES" Type="varchar" MaxLength="120" />
+    <Property Name="ADRES_SEHIR" Type="int" />
+    <Property Name="TEL1" Type="varchar" MaxLength="23" />
+    <Property Name="TEL2" Type="varchar" MaxLength="23" />
+    <Property Name="TEL3" Type="varchar" MaxLength="23" />
+    <Property Name="FAX1" Type="varchar" MaxLength="23" />
+    <Property Name="FAX2" Type="varchar" MaxLength="23" />
+    <Property Name="POSTA_KODU" Type="varchar" MaxLength="6" />
+    <Property Name="ACIKLAMA1" Type="varchar" MaxLength="250" />
+    <Property Name="ACIKLAMA2" Type="varchar" MaxLength="250" />
+    <Property Name="OLUSTURAN" Type="int" />
+    <Property Name="OLUS_TAR" Type="smalldatetime" />
+    <Property Name="DEGISTIREN" Type="int" />
+    <Property Name="DEGIS_TAR" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MidPortal_DB.dbo.Mlz_Depo_Alan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Mlz_Depo_Alan">
+    <Key>
+      <PropertyRef Name="depo_id" />
+      <PropertyRef Name="alan_kodu" />
+      <PropertyRef Name="alan_adi" />
+      <PropertyRef Name="konum_sol" />
+      <PropertyRef Name="konum_ust" />
+      <PropertyRef Name="genislik" />
+      <PropertyRef Name="yukseklik" />
+      <PropertyRef Name="alan_renk" />
+      <PropertyRef Name="alan_id" />
+    </Key>
+    <Property Name="depo_id" Type="int" Nullable="false" />
+    <Property Name="alan_kodu" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="alan_adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="konum_sol" Type="float" Nullable="false" />
+    <Property Name="konum_ust" Type="float" Nullable="false" />
+    <Property Name="genislik" Type="float" Nullable="false" />
+    <Property Name="yukseklik" Type="float" Nullable="false" />
+    <Property Name="alan_renk" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="alan_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RFIDtag" Type="nvarchar" MaxLength="50" />
+    <Property Name="Barkod" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MidPortal_DB.dbo.Mlz_Depo_Alan_Urun' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Mlz_Depo_Alan_Urun">
+    <Key>
+      <PropertyRef Name="alan_urun" />
+    </Key>
+    <Property Name="alan_urun" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="urun_id" Type="int" />
+    <Property Name="urun_kodu" Type="nvarchar" MaxLength="50" />
+    <Property Name="urun_adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="irsaliye_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="irsaliye_tarihi" Type="date" />
+    <Property Name="miktar" Type="float" />
+    <Property Name="alan_id" Type="int" />
+    <Property Name="tag" Type="nvarchar" MaxLength="100" />
+    <Property Name="sicil_kod" Type="nvarchar" MaxLength="50" />
+    <Property Name="is_emri_id" Type="int" />
+    <Property Name="makine_id" Type="int" />
+    <Property Name="lot_no" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MidPortal_DB.dbo.Mlz_Depo_Raf' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Mlz_Depo_Raf">
+    <Key>
+      <PropertyRef Name="depo_id" />
+      <PropertyRef Name="raf_kodu" />
+      <PropertyRef Name="raf_adi" />
+      <PropertyRef Name="konum_sol" />
+      <PropertyRef Name="konum_ust" />
+      <PropertyRef Name="genislik" />
+      <PropertyRef Name="yukseklik" />
+      <PropertyRef Name="satir_sayisi" />
+      <PropertyRef Name="sutun_sayisi" />
+      <PropertyRef Name="raf_id" />
+      <PropertyRef Name="raf_urun_kapasitesi" />
+    </Key>
+    <Property Name="depo_id" Type="int" Nullable="false" />
+    <Property Name="raf_kodu" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="raf_adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="konum_sol" Type="float" Nullable="false" />
+    <Property Name="konum_ust" Type="float" Nullable="false" />
+    <Property Name="genislik" Type="float" Nullable="false" />
+    <Property Name="yukseklik" Type="float" Nullable="false" />
+    <Property Name="satir_sayisi" Type="int" Nullable="false" />
+    <Property Name="sutun_sayisi" Type="int" Nullable="false" />
+    <Property Name="raf_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="raf_urun_kapasitesi" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MidPortal_DB.dbo.Mlz_Depo_Raf_Urun' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Mlz_Depo_Raf_Urun">
+    <Key>
+      <PropertyRef Name="raf_urun_id" />
+      <PropertyRef Name="raf_id" />
+      <PropertyRef Name="urun_sayac" />
+      <PropertyRef Name="i" />
+      <PropertyRef Name="j" />
+    </Key>
+    <Property Name="raf_urun_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="urun1_id" Type="int" />
+    <Property Name="urun2_id" Type="int" />
+    <Property Name="urun1_isim" Type="nvarchar" MaxLength="50" />
+    <Property Name="urun2_isim" Type="nvarchar" MaxLength="50" />
+    <Property Name="raf_id" Type="int" Nullable="false" />
+    <Property Name="urun_sayac" Type="int" Nullable="false" />
+    <Property Name="i" Type="int" Nullable="false" />
+    <Property Name="j" Type="int" Nullable="false" />
+    <Property Name="urun1_kodu" Type="nvarchar" MaxLength="50" />
+    <Property Name="irsaliye_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="irsaliye_tarihi" Type="date" />
+    <Property Name="miktar" Type="float" />
+    <Property Name="RFIDtag" Type="nvarchar" MaxLength="50" />
+    <Property Name="Barkod" Type="nvarchar" MaxLength="50" />
+    <Property Name="lot_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="is_emri_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Mlz_Depo_Raf_Urun_Detay">
+    <Key>
+      <PropertyRef Name="raf_detay_id" />
+    </Key>
+    <Property Name="raf_detay_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="raf_urun_id" Type="int" />
+    <Property Name="urun_id" Type="int" />
+    <Property Name="urun_kodu" Type="nvarchar(max)" />
+    <Property Name="irs_no" Type="nvarchar(max)" />
+    <Property Name="irs_tarih" Type="date" />
+    <Property Name="miktar" Type="float" />
+    <Property Name="rfid" Type="nvarchar(max)" />
+    <Property Name="barkod" Type="nvarchar(max)" />
+    <Property Name="lot_no" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="MidPortal_DBModelStoreContainer">
+    <EntitySet Name="Mlz_Depo" EntityType="Self.Mlz_Depo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mlz_Depo_Raf_Urun_Detay" EntityType="Self.Mlz_Depo_Raf_Urun_Detay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mlz_Depo_Alan" EntityType="Self.Mlz_Depo_Alan" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Mlz_Depo_Alan].[depo_id] AS [depo_id], 
+[Mlz_Depo_Alan].[alan_kodu] AS [alan_kodu], 
+[Mlz_Depo_Alan].[alan_adi] AS [alan_adi], 
+[Mlz_Depo_Alan].[konum_sol] AS [konum_sol], 
+[Mlz_Depo_Alan].[konum_ust] AS [konum_ust], 
+[Mlz_Depo_Alan].[genislik] AS [genislik], 
+[Mlz_Depo_Alan].[yukseklik] AS [yukseklik], 
+[Mlz_Depo_Alan].[alan_renk] AS [alan_renk], 
+[Mlz_Depo_Alan].[alan_id] AS [alan_id], 
+[Mlz_Depo_Alan].[RFIDtag] AS [RFIDtag], 
+[Mlz_Depo_Alan].[Barkod] AS [Barkod]
+FROM [dbo].[Mlz_Depo_Alan] AS [Mlz_Depo_Alan]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Mlz_Depo_Alan_Urun" EntityType="Self.Mlz_Depo_Alan_Urun" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Mlz_Depo_Alan_Urun].[alan_urun] AS [alan_urun], 
+[Mlz_Depo_Alan_Urun].[urun_id] AS [urun_id], 
+[Mlz_Depo_Alan_Urun].[urun_kodu] AS [urun_kodu], 
+[Mlz_Depo_Alan_Urun].[urun_adi] AS [urun_adi], 
+[Mlz_Depo_Alan_Urun].[irsaliye_no] AS [irsaliye_no], 
+[Mlz_Depo_Alan_Urun].[irsaliye_tarihi] AS [irsaliye_tarihi], 
+[Mlz_Depo_Alan_Urun].[miktar] AS [miktar], 
+[Mlz_Depo_Alan_Urun].[alan_id] AS [alan_id], 
+[Mlz_Depo_Alan_Urun].[tag] AS [tag], 
+[Mlz_Depo_Alan_Urun].[sicil_kod] AS [sicil_kod], 
+[Mlz_Depo_Alan_Urun].[is_emri_id] AS [is_emri_id], 
+[Mlz_Depo_Alan_Urun].[makine_id] AS [makine_id], 
+[Mlz_Depo_Alan_Urun].[lot_no] AS [lot_no]
+FROM [dbo].[Mlz_Depo_Alan_Urun] AS [Mlz_Depo_Alan_Urun]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Mlz_Depo_Raf" EntityType="Self.Mlz_Depo_Raf" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Mlz_Depo_Raf].[depo_id] AS [depo_id], 
+[Mlz_Depo_Raf].[raf_kodu] AS [raf_kodu], 
+[Mlz_Depo_Raf].[raf_adi] AS [raf_adi], 
+[Mlz_Depo_Raf].[konum_sol] AS [konum_sol], 
+[Mlz_Depo_Raf].[konum_ust] AS [konum_ust], 
+[Mlz_Depo_Raf].[genislik] AS [genislik], 
+[Mlz_Depo_Raf].[yukseklik] AS [yukseklik], 
+[Mlz_Depo_Raf].[satir_sayisi] AS [satir_sayisi], 
+[Mlz_Depo_Raf].[sutun_sayisi] AS [sutun_sayisi], 
+[Mlz_Depo_Raf].[raf_id] AS [raf_id], 
+[Mlz_Depo_Raf].[raf_urun_kapasitesi] AS [raf_urun_kapasitesi]
+FROM [dbo].[Mlz_Depo_Raf] AS [Mlz_Depo_Raf]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Mlz_Depo_Raf_Urun" EntityType="Self.Mlz_Depo_Raf_Urun" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Mlz_Depo_Raf_Urun].[raf_urun_id] AS [raf_urun_id], 
+[Mlz_Depo_Raf_Urun].[urun1_id] AS [urun1_id], 
+[Mlz_Depo_Raf_Urun].[urun2_id] AS [urun2_id], 
+[Mlz_Depo_Raf_Urun].[urun1_isim] AS [urun1_isim], 
+[Mlz_Depo_Raf_Urun].[urun2_isim] AS [urun2_isim], 
+[Mlz_Depo_Raf_Urun].[raf_id] AS [raf_id], 
+[Mlz_Depo_Raf_Urun].[urun_sayac] AS [urun_sayac], 
+[Mlz_Depo_Raf_Urun].[i] AS [i], 
+[Mlz_Depo_Raf_Urun].[j] AS [j], 
+[Mlz_Depo_Raf_Urun].[urun1_kodu] AS [urun1_kodu], 
+[Mlz_Depo_Raf_Urun].[irsaliye_no] AS [irsaliye_no], 
+[Mlz_Depo_Raf_Urun].[irsaliye_tarihi] AS [irsaliye_tarihi], 
+[Mlz_Depo_Raf_Urun].[miktar] AS [miktar], 
+[Mlz_Depo_Raf_Urun].[RFIDtag] AS [RFIDtag], 
+[Mlz_Depo_Raf_Urun].[Barkod] AS [Barkod], 
+[Mlz_Depo_Raf_Urun].[lot_no] AS [lot_no], 
+[Mlz_Depo_Raf_Urun].[is_emri_id] AS [is_emri_id]
+FROM [dbo].[Mlz_Depo_Raf_Urun] AS [Mlz_Depo_Raf_Urun]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

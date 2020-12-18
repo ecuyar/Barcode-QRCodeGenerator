@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MidPortal_DBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Mlz_Depo">
+    <Key>
+      <PropertyRef Name="DEPO_ID" />
+    </Key>
+    <Property Name="DEPO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UST_DEPO_ID" Type="Int32" Nullable="false" />
+    <Property Name="ALT_DEPO_SAYISI" Type="Int32" Nullable="false" />
+    <Property Name="DEPO_KODU" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADI" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADRES" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="ADRES_SEHIR" Type="Int32" />
+    <Property Name="TEL1" Type="String" MaxLength="23" FixedLength="false" Unicode="false" />
+    <Property Name="TEL2" Type="String" MaxLength="23" FixedLength="false" Unicode="false" />
+    <Property Name="TEL3" Type="String" MaxLength="23" FixedLength="false" Unicode="false" />
+    <Property Name="FAX1" Type="String" MaxLength="23" FixedLength="false" Unicode="false" />
+    <Property Name="FAX2" Type="String" MaxLength="23" FixedLength="false" Unicode="false" />
+    <Property Name="POSTA_KODU" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="ACIKLAMA1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ACIKLAMA2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="OLUSTURAN" Type="Int32" />
+    <Property Name="OLUS_TAR" Type="DateTime" Precision="0" />
+    <Property Name="DEGISTIREN" Type="Int32" />
+    <Property Name="DEGIS_TAR" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Mlz_Depo_Raf_Urun_Detay">
+    <Key>
+      <PropertyRef Name="raf_detay_id" />
+    </Key>
+    <Property Name="raf_detay_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="raf_urun_id" Type="Int32" />
+    <Property Name="urun_id" Type="Int32" />
+    <Property Name="urun_kodu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="irs_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="irs_tarih" Type="DateTime" Precision="0" />
+    <Property Name="miktar" Type="Double" />
+    <Property Name="rfid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="barkod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="lot_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Mlz_Depo_Alan">
+    <Key>
+      <PropertyRef Name="depo_id" />
+      <PropertyRef Name="alan_kodu" />
+      <PropertyRef Name="alan_adi" />
+      <PropertyRef Name="konum_sol" />
+      <PropertyRef Name="konum_ust" />
+      <PropertyRef Name="genislik" />
+      <PropertyRef Name="yukseklik" />
+      <PropertyRef Name="alan_renk" />
+      <PropertyRef Name="alan_id" />
+    </Key>
+    <Property Name="depo_id" Type="Int32" Nullable="false" />
+    <Property Name="alan_kodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="alan_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="konum_sol" Type="Double" Nullable="false" />
+    <Property Name="konum_ust" Type="Double" Nullable="false" />
+    <Property Name="genislik" Type="Double" Nullable="false" />
+    <Property Name="yukseklik" Type="Double" Nullable="false" />
+    <Property Name="alan_renk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="alan_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RFIDtag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Barkod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Mlz_Depo_Alan_Urun">
+    <Key>
+      <PropertyRef Name="alan_urun" />
+    </Key>
+    <Property Name="alan_urun" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urun_id" Type="Int32" />
+    <Property Name="urun_kodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="urun_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="irsaliye_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="irsaliye_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="miktar" Type="Double" />
+    <Property Name="alan_id" Type="Int32" />
+    <Property Name="tag" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="sicil_kod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="is_emri_id" Type="Int32" />
+    <Property Name="makine_id" Type="Int32" />
+    <Property Name="lot_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Mlz_Depo_Raf">
+    <Key>
+      <PropertyRef Name="depo_id" />
+      <PropertyRef Name="raf_kodu" />
+      <PropertyRef Name="raf_adi" />
+      <PropertyRef Name="konum_sol" />
+      <PropertyRef Name="konum_ust" />
+      <PropertyRef Name="genislik" />
+      <PropertyRef Name="yukseklik" />
+      <PropertyRef Name="satir_sayisi" />
+      <PropertyRef Name="sutun_sayisi" />
+      <PropertyRef Name="raf_id" />
+      <PropertyRef Name="raf_urun_kapasitesi" />
+    </Key>
+    <Property Name="depo_id" Type="Int32" Nullable="false" />
+    <Property Name="raf_kodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="raf_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="konum_sol" Type="Double" Nullable="false" />
+    <Property Name="konum_ust" Type="Double" Nullable="false" />
+    <Property Name="genislik" Type="Double" Nullable="false" />
+    <Property Name="yukseklik" Type="Double" Nullable="false" />
+    <Property Name="satir_sayisi" Type="Int32" Nullable="false" />
+    <Property Name="sutun_sayisi" Type="Int32" Nullable="false" />
+    <Property Name="raf_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="raf_urun_kapasitesi" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mlz_Depo_Raf_Urun">
+    <Key>
+      <PropertyRef Name="raf_urun_id" />
+      <PropertyRef Name="raf_id" />
+      <PropertyRef Name="urun_sayac" />
+      <PropertyRef Name="i" />
+      <PropertyRef Name="j" />
+    </Key>
+    <Property Name="raf_urun_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urun1_id" Type="Int32" />
+    <Property Name="urun2_id" Type="Int32" />
+    <Property Name="urun1_isim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="urun2_isim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="raf_id" Type="Int32" Nullable="false" />
+    <Property Name="urun_sayac" Type="Int32" Nullable="false" />
+    <Property Name="i" Type="Int32" Nullable="false" />
+    <Property Name="j" Type="Int32" Nullable="false" />
+    <Property Name="urun1_kodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="irsaliye_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="irsaliye_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="miktar" Type="Double" />
+    <Property Name="RFIDtag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Barkod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lot_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="is_emri_id" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="MidPortal_DBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Mlz_Depo" EntityType="Self.Mlz_Depo" />
+    <EntitySet Name="Mlz_Depo_Raf_Urun_Detay" EntityType="Self.Mlz_Depo_Raf_Urun_Detay" />
+    <EntitySet Name="Mlz_Depo_Alan" EntityType="Self.Mlz_Depo_Alan" />
+    <EntitySet Name="Mlz_Depo_Alan_Urun" EntityType="Self.Mlz_Depo_Alan_Urun" />
+    <EntitySet Name="Mlz_Depo_Raf" EntityType="Self.Mlz_Depo_Raf" />
+    <EntitySet Name="Mlz_Depo_Raf_Urun" EntityType="Self.Mlz_Depo_Raf_Urun" />
+  </EntityContainer>
+</Schema>

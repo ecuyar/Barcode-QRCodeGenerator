@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MidPortal_DBModelStoreContainer" CdmEntityContainer="MidPortal_DBEntities1">
+    <EntitySetMapping Name="Mlz_Depo">
+      <EntityTypeMapping TypeName="MidPortal_DBModel.Mlz_Depo">
+        <MappingFragment StoreEntitySet="Mlz_Depo">
+          <ScalarProperty Name="DEPO_ID" ColumnName="DEPO_ID" />
+          <ScalarProperty Name="UST_DEPO_ID" ColumnName="UST_DEPO_ID" />
+          <ScalarProperty Name="ALT_DEPO_SAYISI" ColumnName="ALT_DEPO_SAYISI" />
+          <ScalarProperty Name="DEPO_KODU" ColumnName="DEPO_KODU" />
+          <ScalarProperty Name="ADI" ColumnName="ADI" />
+          <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+          <ScalarProperty Name="ADRES_SEHIR" ColumnName="ADRES_SEHIR" />
+          <ScalarProperty Name="TEL1" ColumnName="TEL1" />
+          <ScalarProperty Name="TEL2" ColumnName="TEL2" />
+          <ScalarProperty Name="TEL3" ColumnName="TEL3" />
+          <ScalarProperty Name="FAX1" ColumnName="FAX1" />
+          <ScalarProperty Name="FAX2" ColumnName="FAX2" />
+          <ScalarProperty Name="POSTA_KODU" ColumnName="POSTA_KODU" />
+          <ScalarProperty Name="ACIKLAMA1" ColumnName="ACIKLAMA1" />
+          <ScalarProperty Name="ACIKLAMA2" ColumnName="ACIKLAMA2" />
+          <ScalarProperty Name="OLUSTURAN" ColumnName="OLUSTURAN" />
+          <ScalarProperty Name="OLUS_TAR" ColumnName="OLUS_TAR" />
+          <ScalarProperty Name="DEGISTIREN" ColumnName="DEGISTIREN" />
+          <ScalarProperty Name="DEGIS_TAR" ColumnName="DEGIS_TAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mlz_Depo_Raf_Urun_Detay">
+      <EntityTypeMapping TypeName="MidPortal_DBModel.Mlz_Depo_Raf_Urun_Detay">
+        <MappingFragment StoreEntitySet="Mlz_Depo_Raf_Urun_Detay">
+          <ScalarProperty Name="raf_detay_id" ColumnName="raf_detay_id" />
+          <ScalarProperty Name="raf_urun_id" ColumnName="raf_urun_id" />
+          <ScalarProperty Name="urun_id" ColumnName="urun_id" />
+          <ScalarProperty Name="urun_kodu" ColumnName="urun_kodu" />
+          <ScalarProperty Name="irs_no" ColumnName="irs_no" />
+          <ScalarProperty Name="irs_tarih" ColumnName="irs_tarih" />
+          <ScalarProperty Name="miktar" ColumnName="miktar" />
+          <ScalarProperty Name="rfid" ColumnName="rfid" />
+          <ScalarProperty Name="barkod" ColumnName="barkod" />
+          <ScalarProperty Name="lot_no" ColumnName="lot_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mlz_Depo_Alan">
+      <EntityTypeMapping TypeName="MidPortal_DBModel.Mlz_Depo_Alan">
+        <MappingFragment StoreEntitySet="Mlz_Depo_Alan">
+          <ScalarProperty Name="depo_id" ColumnName="depo_id" />
+          <ScalarProperty Name="alan_kodu" ColumnName="alan_kodu" />
+          <ScalarProperty Name="alan_adi" ColumnName="alan_adi" />
+          <ScalarProperty Name="konum_sol" ColumnName="konum_sol" />
+          <ScalarProperty Name="konum_ust" ColumnName="konum_ust" />
+          <ScalarProperty Name="genislik" ColumnName="genislik" />
+          <ScalarProperty Name="yukseklik" ColumnName="yukseklik" />
+          <ScalarProperty Name="alan_renk" ColumnName="alan_renk" />
+          <ScalarProperty Name="alan_id" ColumnName="alan_id" />
+          <ScalarProperty Name="RFIDtag" ColumnName="RFIDtag" />
+          <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mlz_Depo_Alan_Urun">
+      <EntityTypeMapping TypeName="MidPortal_DBModel.Mlz_Depo_Alan_Urun">
+        <MappingFragment StoreEntitySet="Mlz_Depo_Alan_Urun">
+          <ScalarProperty Name="alan_urun" ColumnName="alan_urun" />
+          <ScalarProperty Name="urun_id" ColumnName="urun_id" />
+          <ScalarProperty Name="urun_kodu" ColumnName="urun_kodu" />
+          <ScalarProperty Name="urun_adi" ColumnName="urun_adi" />
+          <ScalarProperty Name="irsaliye_no" ColumnName="irsaliye_no" />
+          <ScalarProperty Name="irsaliye_tarihi" ColumnName="irsaliye_tarihi" />
+          <ScalarProperty Name="miktar" ColumnName="miktar" />
+          <ScalarProperty Name="alan_id" ColumnName="alan_id" />
+          <ScalarProperty Name="tag" ColumnName="tag" />
+          <ScalarProperty Name="sicil_kod" ColumnName="sicil_kod" />
+          <ScalarProperty Name="is_emri_id" ColumnName="is_emri_id" />
+          <ScalarProperty Name="makine_id" ColumnName="makine_id" />
+          <ScalarProperty Name="lot_no" ColumnName="lot_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mlz_Depo_Raf">
+      <EntityTypeMapping TypeName="MidPortal_DBModel.Mlz_Depo_Raf">
+        <MappingFragment StoreEntitySet="Mlz_Depo_Raf">
+          <ScalarProperty Name="depo_id" ColumnName="depo_id" />
+          <ScalarProperty Name="raf_kodu" ColumnName="raf_kodu" />
+          <ScalarProperty Name="raf_adi" ColumnName="raf_adi" />
+          <ScalarProperty Name="konum_sol" ColumnName="konum_sol" />
+          <ScalarProperty Name="konum_ust" ColumnName="konum_ust" />
+          <ScalarProperty Name="genislik" ColumnName="genislik" />
+          <ScalarProperty Name="yukseklik" ColumnName="yukseklik" />
+          <ScalarProperty Name="satir_sayisi" ColumnName="satir_sayisi" />
+          <ScalarProperty Name="sutun_sayisi" ColumnName="sutun_sayisi" />
+          <ScalarProperty Name="raf_id" ColumnName="raf_id" />
+          <ScalarProperty Name="raf_urun_kapasitesi" ColumnName="raf_urun_kapasitesi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mlz_Depo_Raf_Urun">
+      <EntityTypeMapping TypeName="MidPortal_DBModel.Mlz_Depo_Raf_Urun">
+        <MappingFragment StoreEntitySet="Mlz_Depo_Raf_Urun">
+          <ScalarProperty Name="raf_urun_id" ColumnName="raf_urun_id" />
+          <ScalarProperty Name="urun1_id" ColumnName="urun1_id" />
+          <ScalarProperty Name="urun2_id" ColumnName="urun2_id" />
+          <ScalarProperty Name="urun1_isim" ColumnName="urun1_isim" />
+          <ScalarProperty Name="urun2_isim" ColumnName="urun2_isim" />
+          <ScalarProperty Name="raf_id" ColumnName="raf_id" />
+          <ScalarProperty Name="urun_sayac" ColumnName="urun_sayac" />
+          <ScalarProperty Name="i" ColumnName="i" />
+          <ScalarProperty Name="j" ColumnName="j" />
+          <ScalarProperty Name="urun1_kodu" ColumnName="urun1_kodu" />
+          <ScalarProperty Name="irsaliye_no" ColumnName="irsaliye_no" />
+          <ScalarProperty Name="irsaliye_tarihi" ColumnName="irsaliye_tarihi" />
+          <ScalarProperty Name="miktar" ColumnName="miktar" />
+          <ScalarProperty Name="RFIDtag" ColumnName="RFIDtag" />
+          <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+          <ScalarProperty Name="lot_no" ColumnName="lot_no" />
+          <ScalarProperty Name="is_emri_id" ColumnName="is_emri_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
